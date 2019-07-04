@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js</title>
+    <style>
+    body{
+        background:linear-gradient(90deg,red,gold);
+    }
+    #mybtn{
+        padding: 3vw;
+        margin: 1vw;
+        background-color: gold;
+    }
+    </style>
+</head>
+<body>
+    <div style="text-align: center;">
+        Kakarot
+    </div>
+    <div id="kakarot">
+        Goku's health is <span id="goku">100</span>
+    </div>
+    <button onclick="myfunc()" id="mybtn">Click me</button>
+</body>
+<script>
+    let goku = {
+        health: 100,
+        name: "kakarot",
+    }
+    function myfunc(){
+        if(goku.health <= 0){
+            console.log("goku is dead");
+            document.getElementById("kakarot").innerText="Goku has perished."
+            return;
+        }
+        console.log(`goku's health is ${goku.health}`);
+        goku.health-=10;
+        console.log(`goku's health is now ${goku.health}`);
+        document.getElementById("goku").innerText=goku.health;
+    }
+</script>
+</html>

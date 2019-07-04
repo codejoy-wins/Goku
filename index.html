@@ -13,6 +13,14 @@
         padding: 3vw;
         margin: 1vw;
         background-color: gold;
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+    #kakarot{
+        position: fixed;
+        top: 100px;
+        right: 0;
     }
     #pic{
         width: 100%;
@@ -20,7 +28,7 @@
     </style>
 </head>
 <body>
-    <div style="text-align: center;">
+    <div style="text-align: center;" id="here">
         <img src="goku.png" alt="goku" id="pic">
     </div>
     <div id="kakarot">
@@ -37,6 +45,9 @@
         if(goku.health <= 0){
             console.log("goku is dead");
             document.getElementById("kakarot").innerText="Goku has perished."
+            document.getElementById("here").innerHTML=`
+            <img src="deadgoku.png" alt="deadgoku" id="pic">
+            `
             return;
         }
         console.log(`goku's health is ${goku.health}`);
